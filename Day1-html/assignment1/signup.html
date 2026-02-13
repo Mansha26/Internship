@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp Page</title>
+</head>
+<body style=>
+    <header style="background-color: rgba(183, 234, 248, 0.943); border-style:outset; border-radius: 10px 50px; padding: 5px 2px 5px 2px; margin: 10px 0px 10px 0px;">
+  <h2 style="font-family:Georgia, 'Times New Roman', Times, serif; text-align: center;">Welcome User</h2><h2 style="text-align: center;">Sign Up</h2></header>
+  <section style="background-color: rgb(227, 225, 220); border-radius: 5px 10px; text-align:justify; margin: 5px 0px 5px 0px; padding:10px 5px 10px 5px "><form method="get" style="padding-left: 30%;">
+    <div style="margin-bottom:15px; margin-top: 10px;">
+    <label for="fname"><b>Name:</b></label>
+<input type="text" id="fname" name="fname" placeholder="First Name" required>
+<input type="text" id="sname" name="sname" placeholder="Second Name (Optional)">
+<input type="text" id="tname" name="tname" placeholder="Third Name" required>
+<br><br></div>
+<div style="margin-bottom:15px;">
+    <label for="email"><b>Email:</b></label>
+    <input type="email" id="email" name="email" placeholder="abc@gmail.com" required><br><br>
+</div>
+<div style="margin-bottom:15px;">
+    <label for="mobile"><b>Mobile No.:</b></label>
+    <input type="tel" id="mobile" name="mobile" maxlength="10" pattern="\d{10}" placeholder="Enter 10 digit numbers only" required><br><br>
+</div>
+<div style="margin-bottom:15px;">
+    <label for="password"><b>Password:</b></label>
+    <input type="password" id="password" name="password" required><br><br>
+</div>
+<div style="margin-bottom:15px;">
+    <label for="state"><b>State:</b></label>
+    <select id="state" name="state" required>
+      <option value="">--Select State--</option>
+      <option value="Andhra Pradesh">Andhra Pradesh</option>
+      <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+      <option value="Assam">Assam</option>
+      <option value="Bihar">Bihar</option>
+      <option value="Chhattisgarh">Chhattisgarh</option>
+      <option value="Goa">Goa</option>
+      <option value="Gujarat">Gujarat</option>
+      <option value="Haryana">Haryana</option>
+      <option value="Himachal Pradesh">Himachal Pradesh</option>
+      <option value="Jharkhand">Jharkhand</option>
+      <option value="Karnataka">Karnataka</option>
+      <option value="Kerala">Kerala</option>
+      <option value="Madhya Pradesh">Madhya Pradesh</option>
+      <option value="Maharashtra">Maharashtra</option>
+      <option value="Manipur">Manipur</option>
+      <option value="Meghalaya">Meghalaya</option>
+      <option value="Mizoram">Mizoram</option>
+      <option value="Nagaland">Nagaland</option>
+      <option value="Odisha">Odisha</option>
+      <option value="Punjab">Punjab</option>
+      <option value="Rajasthan">Rajasthan</option>
+      <option value="Sikkim">Sikkim</option>
+      <option value="Tamil Nadu">Tamil Nadu</option>
+      <option value="Telangana">Telangana</option>
+      <option value="Tripura">Tripura</option>
+      <option value="Uttar Pradesh">Uttar Pradesh</option>
+      <option value="Uttarakhand">Uttarakhand</option>
+      <option value="West Bengal">West Bengal</option>
+    </select><br><br>
+</div>
+<div style="margin-bottom:15px;">
+    <label for="address"><b>Address:</b></label><br>
+    <textarea id="address" name="address" rows="3" required></textarea><br><br>
+</div>
+<div style="margin-bottom:10px;">
+    <button type="submit" style="padding: 3px 10px; margin-top:0px; margin-left: 25px;">Confirm</button><br><br></div>
+  </form>
+  </section>
+<div style="background-color: rgb(19, 118, 103); border-radius: 5px 10px; padding-left: 10px; padding-bottom: 5px; margin: 10px 0px 10px 0px; color: lightgray;">
+
+  <!-- Embedding Map -->
+  <h3>Locate us on this address below👇</h3>
+  <p>#87,2nd chord rd,above pizza hut,opposite to cafe coffee day,Bimajyothi LIC colony,3rd stage,Basaveshwar nagar,Bengaluru</p>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11156.603793382643!2d77.52948043755872!3d12.99737850000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3d9bcd2ec80b%3A0xd64c10e204297f9f!2sPizza%20Hut%20%7C%20Basaveshwar%20Nagar%2C%20Bangalore!5e1!3m2!1sen!2sin!4v1770945203131!5m2!1sen!2sin" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+</body>
+</html>
