@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cards</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+    />
+  </head>
+  <body>
+    <style>
+      .swiper {
+        width: 50%;
+        height: 80%;
+      }
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #444;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .food-card{
+        border-radius: 5%;
+        background-color: plum;
+      }
+      .card-info{
+           color:aliceblue;
+           padding:30px 12px 30px 12px;
+      }
+    </style>
+    <h1>Cards</h1>
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="food-card">
+            <img src="dosa.jpg" alt="Dosa" />
+            <div class="card-info">
+              <h3>Masala Dosa</h3>
+              <div class="rating">★★★★☆ (4.5)</div>
+              <p class="review">"Crispy and the chutney is great."</p>
+              <button class="try-btn">Try It</button>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide"><div class="food-card">
+                <img src="./images/dosa.jpg" alt="Dosa">
+                <div class="card-info">
+                    <h3>Masala Dosa</h3>
+                    <div class="rating">★★★★☆ (4.5)</div>
+                    <p class="review">"Crispy and the chutney is great."</p>
+                    <button class="try-btn">Try It</button>
+                </div>
+            </div></div>
+        <div class="swiper-slide"><div class="food-card">
+                <img src="./images/dosa.jpg" alt="Dosa">
+                <div class="card-info">
+                    <h3>Masala Dosa</h3>
+                    <div class="rating">★★★★☆ (4.5)</div>
+                    <p class="review">"Crispy and the chutney is great."</p>
+                    <button class="try-btn">Try It</button>
+                </div>
+            </div></div>
+        <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-slide">Slide 5</div>
+        <div class="swiper-slide">Slide 6</div>
+        <div class="swiper-slide">Slide 7</div>
+        <div class="swiper-slide">Slide 8</div>
+        <div class="swiper-slide">Slide 9</div>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        slidesPerView:3,
+        spaceBetween: 30,
+        loop:true,
+      });
+    </script>
+  </body>
+</html>

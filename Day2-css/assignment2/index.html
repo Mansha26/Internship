@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Moments Restaurant</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+   
+   
+</head>
+<body>
+
+    <header class="site-header">
+        
+        <div class="top-bar">
+           
+            <div class="logo-container">
+               
+                <img src="./images/happylogo.png" alt="Happy Moments Logo" class="logo">
+            
+                <h1>Happy Moments</h1>
+            </div>
+            <div class="user-actions">
+                <a href="login.html" class="login-btn">Login</a>
+            </div>
+        </div>
+
+       <nav class="main-nav">
+    <div class="nav-container">
+        
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            
+            <li class="dropdown-item">
+                <a href="#menu">Menu <span class="arrow">▼</span></a>
+                <ul class="dropdown-content">
+                    <li><a href="#snacks">Snacks</a></li>
+                    <li><a href="#roti">Roti & Paratha</a></li>
+                    <li><a href="#veg">Veg Gravies</a></li>
+                    <li><a href="#nonveg">Non Veg Gravies</a></li>
+                    <li><a href="#sweets">Sweets</a></li>
+                </ul>
+            </li>
+
+            <li><a href="#popular">Popular</a></li>
+            <li><a href="#book-table">Your Table</a></li>
+        </ul>
+
+        <div class="cart-section">
+            <a href="billing.html" class="buy-now-btn">
+                Buy Now <span class="cart-icon">🛒</span>
+            </a>
+        </div>
+
+    </div>
+</nav>
+
+    </header>
+    <main>
+
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <h1>Happy Moments</h1>
+            <p>Make your moments happy with your loved ones.<br>Have a great serve.</p>
+        </div>
+    </section>
+
+    <section id="menu" class="section-padding">
+        <h2 class="section-title">Our Menu Highlights</h2>
+        <div class="table-container">
+            <table class="food-table">
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Food Item</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Snacks</td>
+                        <td>Paneer Tikka</td>
+                        <td>₹250</td>
+                    </tr>
+                    <tr>
+                        <td>Roti & Paratha</td>
+                        <td>Butter Naan</td>
+                        <td>₹60</td>
+                    </tr>
+                    <tr>
+                        <td>Veg Gravies</td>
+                        <td>Paneer Butter Masala</td>
+                        <td>₹280</td>
+                    </tr>
+                    <tr>
+                        <td>Non Veg Gravies</td>
+                        <td>Chicken Curry</td>
+                        <td>₹320</td>
+                    </tr>
+                    <tr>
+                        <td>Sweets</td>
+                        <td>Gulab Jamun</td>
+                        <td>₹100</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="popular" class="section-padding">
+        <h2 class="section-title">Your Craving Urge</h2>
+        
+        <div class="card-container">
+            
+            <div class="food-card">
+                <img src="./images/biryani.jpg" alt="Biryani">
+                <div class="card-info">
+                    <h3>Chicken Biryani</h3>
+                    <div class="rating">★★★★★ (4.8)</div>
+                    <p class="review">"Absolutely delicious and spicy!"</p>
+                    <button class="try-btn">Try It</button>
+                </div>
+            </div>
+
+            <div class="food-card">
+                <img src="./images/dosa.jpg" alt="Dosa">
+                <div class="card-info">
+                    <h3>Masala Dosa</h3>
+                    <div class="rating">★★★★☆ (4.5)</div>
+                    <p class="review">"Crispy and the chutney is great."</p>
+                    <button class="try-btn">Try It</button>
+                </div>
+            </div>
+
+            <div class="food-card">
+                <img src="./images/thali.jpg" alt="Thali">
+                <div class="card-info">
+                    <h3>Special Thali</h3>
+                    <div class="rating">★★★★★ (4.9)</div>
+                    <p class="review">"Best value for money."</p>
+                    <button class="try-btn">Try It</button>
+                </div>
+            </div>
+
+            <div class="food-card">
+                <img src="./images/kebab.jpg" alt="Kebab">
+                <div class="card-info">
+                    <h3>Seekh Kebab</h3>
+                    <div class="rating">★★★★☆ (4.2)</div>
+                    <p class="review">"Tender and juicy appetizer."</p>
+                    <button class="try-btn">Try It</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="book-table" class="section-padding bg-light">
+        <h2 class="section-title">Book Your Table</h2>
+        <div class="form-container">
+            <form action="#" method="POST">
+                
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="mobile">Mobile Number:</label>
+                    <input type="tel" id="mobile" name="mobile" placeholder="10-digit number" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="date">Date & Time:</label>
+                    <input type="datetime-local" id="date" name="date" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="members">Total Members:</label>
+                    <input type="number" id="members" name="members" min="1" max="20" required>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="submit-btn">Submit</button>
+                    <button type="button" class="cancel-btn">Cancel</button>
+                </div>
+
+            </form>
+        </div>
+    </section>
+
+</main>
+<footer class="site-footer">
+    <div class="footer-container">
+        
+        <div class="footer-section links-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#popular">Popular Items</a></li>
+                <li><a href="#book-table">Book a Table</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section map-section">
+            <h3>Visit Us</h3>
+            <p class="address-text">
+                📍 Happy Moments Restaurant,<br>
+                123 Food Street, Flavor Town,<br>
+                India - 560001
+            </p>
+            
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11156.603793382643!2d77.52948043755872!3d12.99737850000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3d9bcd2ec80b%3A0xd64c10e204297f9f!2sPizza%20Hut%20%7C%20Basaveshwar%20Nagar%2C%20Bangalore!5e1!3m2!1sen!2sin!4v1770945203131!5m2!1sen!2sin" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="social-icons">
+           <!-- <a href="#" class="icon"><img src="instahappy.svg"></a>
+           <a href="#"" class="icon"><img src="fbhappy.svg"></a> -->
+           <i data-lucide="instagram" class="icon"></i>
+           <i data-lucide="facebook" class="icon"></i> 
+        <a href="mailto:manshaansari26@gmail.com"><i data-lucide="at-sign" class="icon"></i></a>
+        <a href="https://wa.me/8896534841"><img src="./images/whatsapphappy.svg" class="icon"></a>
+        </div>
+        <p class="copyright">© 2026 Happy Moments. All rights reserved.</p>
+    </div>
+</footer>
+ <script src="https://unpkg.com/lucide@latest"></script>
+ <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

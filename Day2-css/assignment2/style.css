@@ -1,0 +1,482 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #fffbf2; /* Light cream background for food theme */
+    color: #333;
+}
+
+/* --- Header Layout --- */
+.site-header {
+    background-color: #ffffff;
+    position: static; 
+    top: 0;
+    z-index: 1000;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    height: 100px; /* Fixed height for consistency */
+}
+
+/* --- Brand Name (Left) --- */
+.brand-name {
+    flex: 1; /* Takes up equal space to help center the logo */
+}
+
+.logo-container h1 {
+    font-family: 'Dancing Script', cursive; /* Cursive font */
+    font-size: 2.5rem;
+    color: #d35400; 
+    padding-left: 20px;
+    padding-top: 25px;/* Burnt Orange color */
+}
+
+/* --- Logo (Center) --- */
+.logo-container {
+    flex: 1;
+    display: flex;
+    justify-content:flex-start; /* Centers the image */
+}
+
+.logo {
+    height: 90px;
+    width: 90px;
+    border-radius: 50%; /* Makes the logo circular */
+    object-fit: auto;
+    border: 3px solid #d35400;
+}
+
+/* --- Login Button (Right) --- */
+.user-actions {
+    flex: 1;
+    display: flex;
+    padding-right: 5px;
+    justify-content: flex-end; /* Pushes button to the right */
+}
+
+.login-btn {
+    text-decoration: none;
+    background-color: #d35400;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.login-btn:hover {
+    background-color: #e67e22;
+}
+
+/* --- Navigation Bar Layout --- */
+.main-nav {
+    background-color: #2c3e50;
+    position: relative;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between; /* Pushes links to center/left and cart to right */
+    align-items: center;
+    max-width: 1200px; /* Limits width for better look on big screens */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Navigation Links --- */
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    position: relative; 
+}
+
+.nav-links li a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    padding: 15px 20px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-links li a:hover {
+    background-color: #34495e;
+    color: #f39c12;
+}
+
+/* --- Dropdown Menu Styles --- */
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 1001;
+    top: 100%; /* Positions it directly below the parent link */
+    left: 0;
+    list-style: none;
+}
+
+/* Show the dropdown when hovering over the parent li */
+.dropdown-item:hover .dropdown-content {
+    display: block;
+}
+
+/* Style the dropdown links differently */
+.dropdown-content li a {
+    color: #333; 
+    padding: 12px 16px;
+    text-transform: capitalize; /* Normal casing for sub-items */
+    border-bottom: 1px solid #eee;
+}
+
+.dropdown-content li a:hover {
+    background-color: #f1f1f1;
+    color: #d35400;
+}
+
+.arrow {
+    font-size: 0.7em;
+    margin-left: 5px;
+}
+
+/* --- Buy Now / Cart Button --- */
+.buy-now-btn {
+    text-decoration: none;
+    background-color: #27ae60; /* Green for "Buy" action */
+    color: white;
+    padding: 6px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Space between text and icon */
+    transition: transform 0.2s;
+}
+
+.buy-now-btn:hover {
+    background-color: #2ecc71;
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+.cart-icon {
+    font-size: 1.2rem;
+}
+
+/* --- Shared Section Styles --- */
+.section-padding {
+    padding: 60px 20px; /* Space top/bottom and left/right */
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #d35400;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+/* --- 1. HOME SECTION (Hero) --- */
+.hero-section {
+    height: 80vh; /* Takes 80% of the screen height */
+    background-image:url('./images/deliciousbg.jpg'); 
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: left; /* Centers horizontally */
+    align-items: center;     /* Centers vertically */
+    color: white;
+    text-align: center;
+}
+
+
+
+.hero-content h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    font-weight: 600;
+    margin-left: 30px;
+    text-shadow: 1px 1px 2px #000000;
+}
+
+/* --- 2. MENU SECTION (Table) --- */
+.table-container {
+    overflow-x: auto; /* Allows scrolling on small screens */
+    max-width: 800px;
+    margin: 0 auto; /* Centers the table */
+}
+
+.food-table {
+    width: 100%;
+    border-collapse: collapse; /* Removes double borders */
+    border: 1px solid #ddd;
+    background-color: white;
+}
+
+.food-table th, .food-table td {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+.food-table th {
+    background-color: #d35400;
+    color: white;
+    font-size: 1.1rem;
+}
+
+.food-table tr:hover {
+    background-color: #f9f9f9; /* Highlight row on hover */
+}
+
+/* --- 3. POPULAR SECTION (Cards) --- */
+.card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allows cards to wrap to next line on small screens */
+    gap: 30px; /* Space between cards */
+}
+
+.food-card {
+    background-color: white;
+    width: 250px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden; /* Keeps image corners rounded */
+    transition: transform 0.3s;
+    text-align: left;
+}
+
+.food-card:hover {
+    transform: translateY(-5px); /* Moves card up slightly on hover */
+}
+
+.food-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-info {
+    padding: 15px;
+    position: relative; /* Needed for positioning the button */
+}
+
+.card-info h3 {
+    margin-bottom: 5px;
+    color: #2c3e50;
+}
+
+.rating {
+    color: #f1c40f; /* Yellow star color */
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.review {
+    font-style: italic;
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 35px; /* Space for the button */
+}
+
+.try-btn {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background-color: #d35400;
+    color: white;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.try-btn:hover {
+    background-color: #e67e22;
+}
+
+/* --- 4. YOUR TABLE SECTION (Form) --- */
+.bg-light {
+    background-color: #fdf5e6; 
+}
+
+.form-container {
+    max-width: 500px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.submit-btn {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    flex: 1; /* Makes buttons equal width */
+}
+
+.cancel-btn {
+    background-color: #c0392b;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    flex: 1;
+}
+
+.submit-btn:hover { background-color: #2ecc71; }
+.cancel-btn:hover { background-color: #e74c3c; }
+
+/* --- Footer Layout --- */
+.site-footer {
+    background-color: #2c3e50;
+    color: white;
+    padding-top: 40px;
+    margin-top: 50px;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows stacking on mobile */
+    justify-content: space-around; /* Spreads items out */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 40px 20px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 300px; /* Prevents columns from getting too squished */
+    margin-bottom: 20px;
+}
+
+.footer-section h3 {
+    color: #f39c12; /* Gold color for headings */
+    margin-bottom: 20px;
+    border-bottom: 2px solid #d35400;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* --- Quick Links Styles --- */
+.links-section ul {
+    list-style: none;
+}
+
+.links-section ul li {
+    margin-bottom: 10px;
+}
+
+.links-section ul li a {
+    color: #ddd;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.links-section ul li a:hover {
+    color: #f39c12;
+    padding-left: 5px; /* Slight movement effect */
+}
+
+/* --- Address & Map Styles --- */
+.address-text {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: #ddd;
+}
+
+.map-container iframe {
+    border-radius: 8px; /* Rounded corners for the map */
+
+}
+
+/* --- Bottom Footer (Socials) --- */
+.footer-bottom {
+    background-color: #1a252f; /* Slightly darker shade */
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #34495e;
+}
+
+.social-icons {
+    margin-bottom: 15px;
+}
+
+.social-icons .icon {
+    color: rgb(192, 55, 55);
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.1rem;
+    height: 20px;
+    width: 20px;
+    transition: color 0.3s;
+}
+
+.social-icons .icon:hover {
+    color: #f39c12;
+}
+
+.email-contact {
+    margin-bottom: 10px;
+    color: #bdc3c7;
+}
+
+.copyright {
+    font-size: 0.8rem;
+    color: #7f8c8d;
+}
