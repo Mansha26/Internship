@@ -12,14 +12,16 @@
   <body>
     <style>
       .swiper {
-        width: 50%;
-        height: 80%;
+        width: 70%;
+        height: 40%;
       }
 
       .swiper-slide {
+        width: 70px;
+        
         text-align: center;
         font-size: 18px;
-        background: #444;
+        background: none;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -30,14 +32,21 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+        border-radius: 10%;
       }
-      .food-card{
-        border-radius: 5%;
-        background-color: plum;
+      .food-card {
+        border-radius: 10%;
+        background-color: rgb(104, 37, 104);
+        
       }
-      .card-info{
-           color:aliceblue;
-           padding:30px 12px 30px 12px;
+      .card-info {
+        color: aliceblue;
+        padding: 30px 12px 30px 12px;
+      }
+
+      .try-btn{
+        background-color: burlywood;
+        color: black;
       }
     </style>
     <h1>Cards</h1>
@@ -54,8 +63,72 @@
             </div>
           </div>
         </div>
+        <div class="swiper-slide">
+          <div class="food-card">
+            <img src="dosa.jpg" alt="Dosa" />
+            <div class="card-info">
+              <h3>Masala Dosa</h3>
+              <div class="rating">★★★★☆ (4.5)</div>
+              <p class="review">"Crispy and the chutney is great."</p>
+              <button class="try-btn">Try It</button>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="food-card">
+            <img src="biryani.jpg" alt="Biryani" />
+            <div class="card-info">
+              <h3>Chicken Biryani</h3>
+              <div class="rating">★★★★★ (4.8)</div>
+              <p class="review">"Absolutely delicious and spicy!"</p>
+              <button class="try-btn">Try It</button>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="food-card">
+            <img src="thali.jpg" alt="Thali" />
+            <div class="card-info">
+              <h3>Special Thali</h3>
+              <div class="rating">★★★★★ (4.9)</div>
+              <p class="review">"Best value for money."</p>
+              <button class="try-btn">Try It</button>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="food-card">
+            <img src="kebab.jpg" alt="Kebab" />
+            <div class="card-info">
+              <h3>Seekh Kebab</h3>
+              <div class="rating">★★★★☆ (4.2)</div>
+              <p class="review">"Tender and juicy appetizer."</p>
+              <button class="try-btn">Try It</button>
+            </div>
+          </div>
+        </div>
         <div class="swiper-slide"><div class="food-card">
-                <img src="./images/dosa.jpg" alt="Dosa">
+                <img src="kebab.jpg" alt="Kebab">
+                <div class="card-info">
+                    <h3>Seekh Kebab</h3>
+                    <div class="rating">★★★★☆ (4.2)</div>
+                    <p class="review">"Tender and juicy appetizer."</p>
+                    <button class="try-btn">Try It</button>
+                </div>
+            </div>
+</div>
+        <div class="swiper-slide"><div class="food-card">
+                <img src="kebab.jpg" alt="Kebab">
+                <div class="card-info">
+                    <h3>Seekh Kebab</h3>
+                    <div class="rating">★★★★☆ (4.2)</div>
+                    <p class="review">"Tender and juicy appetizer."</p>
+                    <button class="try-btn">Try It</button>
+                </div>
+            </div>
+</div>
+        <div class="swiper-slide"><div class="food-card">
+                <img src="dosa.jpg" alt="Dosa">
                 <div class="card-info">
                     <h3>Masala Dosa</h3>
                     <div class="rating">★★★★☆ (4.5)</div>
@@ -63,21 +136,7 @@
                     <button class="try-btn">Try It</button>
                 </div>
             </div></div>
-        <div class="swiper-slide"><div class="food-card">
-                <img src="./images/dosa.jpg" alt="Dosa">
-                <div class="card-info">
-                    <h3>Masala Dosa</h3>
-                    <div class="rating">★★★★☆ (4.5)</div>
-                    <p class="review">"Crispy and the chutney is great."</p>
-                    <button class="try-btn">Try It</button>
-                </div>
-            </div></div>
-        <div class="swiper-slide">Slide 4</div>
-        <div class="swiper-slide">Slide 5</div>
-        <div class="swiper-slide">Slide 6</div>
-        <div class="swiper-slide">Slide 7</div>
-        <div class="swiper-slide">Slide 8</div>
-        <div class="swiper-slide">Slide 9</div>
+    
       </div>
       <div class="swiper-button-next"></div>
       <div class="swiper-button-prev"></div>
@@ -91,9 +150,20 @@
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
         },
-        slidesPerView:3,
+        slidesPerView: 3,
         spaceBetween: 30,
-        loop:true,
+        loop: true,
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+
+        coverflowEffect: {
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true,
+        },
       });
     </script>
   </body>
