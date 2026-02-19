@@ -1,0 +1,252 @@
+
+        /* RESET */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            /* Terrible background color: Puke Green */
+            background-color: #aebf5e; 
+            font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* --- HEADER SECTION --- */
+        .header-strip {
+            /* Placed absolutely to let the circle overlap it badly */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background: linear-gradient(90deg, #ff69b4, #8b4513); /* Hot Pink to Brown gradient */
+            display: flex;
+            justify-content: flex-end; /* Pushes content to right */
+            align-items: center;
+            border-bottom: 5px solid yellow;
+            z-index: 1; /* Behind the circle */
+        }
+
+        .header-title {
+            /* Centered roughly but not perfectly */
+            position: absolute;
+            left: 40%; 
+            color: yellow;
+            font-size: 2rem;
+            text-shadow: 2px 2px red;
+            text-decoration: underline wavy blue;
+        }
+
+        .header-logo {
+            width: 150px;
+            height: 100px;
+            background-color: white;
+            border: 3px dashed black;
+            margin-top: 100px;
+            margin-right: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 10px;
+            transform: rotate(5deg); /* Slight tilt for annoyance */
+        }
+        .logo{
+            height:90px;
+            width:140px;
+            object-fit: auto;
+        }
+
+        /* --- THE MAGIC CIRCLE (Worst UI Feature) --- */
+        .nav-circle-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            /* Initial State: Small Quarter Circle */
+            width: 120px;
+            height: 120px;
+            background-color: cyan;
+            /* This creates the bottom-right curve */
+            border-bottom-right-radius: 100%;
+            border: 5px solid red;
+            z-index: 10;
+            /* THE TRANSITION: Extremely slow (3 seconds) to frustrate user */
+            transition: all 3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            overflow: hidden; /* Hides buttons when closed */
+            cursor: help;
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
+        }
+
+        /* The Hover Effect (The Interaction) */
+        .nav-circle-container:hover {
+            /* Expands to a massive size */
+            width: 400px;
+            height: 400px;
+            background-color: blue;
+            border-color: yellow;
+        }
+
+        /* Helper text to tell user what to do */
+        .hover-hint {
+            position: absolute;
+            top: 20px;
+            left: 10px;
+            color: black;
+            font-weight: bold;
+            font-size: 12px;
+            width: 80px;
+            pointer-events: none;
+        }
+
+        /* --- NAVIGATION BUTTONS INSIDE CIRCLE --- */
+        .nav-items {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* 2x2 Grid like drawing */
+            gap: 10px;
+            padding-top: 50px;
+            padding-left: 20px;
+            width: 300px;
+            /* Initially hidden visually via opacity */
+            opacity: 0;
+            transition: opacity 0.5s;
+            transition-delay: 0s; /* Instant hide */
+        }
+
+        /* Show items only when circle is hovered */
+        .nav-circle-container:hover .nav-items {
+            opacity: 1;
+            transition-delay: 2s; /* Wait 2 seconds before showing buttons! */
+        }
+
+        /* Hide hint on hover */
+        .nav-circle-container:hover .hover-hint {
+            display: none;
+        }
+
+        .nav-btn {
+            background-color: orange;
+            border: 3px ridge white;
+            padding: 15px;
+            color: purple;
+            font-weight: bold;
+            text-align: center;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+
+        .nav-btn:hover {
+            background-color: white;
+            color: red;
+        }
+
+        /* --- MAIN CONTENT (Placeholder) --- */
+        .main-content {
+            margin-top: 150px;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .secret-menu {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: rgb(112, 207, 251);
+            color: black;
+            display: inline-block;
+            border: 2px dashed red;
+        }
+        .secret-menu:hover {
+            background-color: white;
+
+        }
+
+        ul{
+            list-style-type: none;
+        }
+        .secret {
+            /* Add this class to any text you want to hide */
+    filter: blur(3px);
+    transition: filter 2s; /* Make it take 2 seconds to clear up! */
+}
+
+.secret:hover {
+    filter: blur(0px);
+    background-color: yellowgreen;
+}
+    /* flavour section */
+    /* --- FLAVOUR SECTION STYLES --- */
+#flavour {
+    display: flex; /* Hidden by default */
+    padding: 50px 20px;
+    background-color: #550000; /* Dark blood red background */
+    min-height: 100vh;
+    text-align: center;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.ice-cream-card {
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, #ffffff 30%, #aebf5e 100%);
+    border-radius: 50%; /* CIRCULAR CARD */
+    border: 5px dashed yellow;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Hides corners */
+    box-shadow: 10px 10px 0px black;
+    transition: transform 0.2s;
+    animation: spin-stop 3s infinite linear;
+}
+
+.ice-cream-emoji {
+    font-size: 50px;
+}
+
+.flavor-title {
+    font-size: 24px;
+    color: blue;
+    font-weight: bold;
+    margin: 5px 0;
+     /* Strikethrough for no reason */
+}
+
+.price-tag {
+    font-size: 18px;
+    color: red;
+    background: yellow;
+    padding: 2px;
+    transform: rotate(-10deg);
+}
+
+/* --- THE WEIRD ROTATING BUTTON --- */
+.buy-now-btn {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #7d117d; /* Neon Pink */
+    color: rgb(237, 248, 34);
+    border: 3px double white;
+    font-family: 'Comic Sans MS';
+    cursor: text; /* Wait cursor to annoy user */
+    
+    /* ANIMATION LOGIC: 
+       Total duration 3s. 
+       It spins for 0.5s, then waits (stops) for 2.5s. 
+       Infinite loop. */
+    /* animation: spin-stop 3s infinite linear; */
+}
+
+@keyframes spin-stop {
+    0% { transform: rotate(0deg); }
+    10% { transform: rotate(0deg); } /* Fast Spin */
+    100% { transform: rotate(360deg); } /* Pause for rest of time */
+}
+    
