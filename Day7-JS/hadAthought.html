@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Light/dark mode </title>
+    <style>
+        body {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            transition: 0.3s; /* Smooth transition */
+            padding: 20px;
+        }
+        
+        /* The Default (Light) Style */
+        .light-theme {
+            background-color: rgb(55, 94, 172);
+            color: white;
+        
+        }
+
+        .light-theme #a1{
+            border : 1px solid white ;
+            /* Optional: Change border color in light mode */
+        }
+
+        /* The Dark Style */
+        .dark-theme {
+            background-color: rgb(175, 160, 244);
+            color: black;
+        
+        }
+
+        .dark-theme #a1{
+            border : 1px solid black ;
+            /* Optional: Change border color in dark mode */
+        }
+
+        #toggle-btn {
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            background-color: rgb(248, 153, 205);
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 30px;
+            align-items: flex-end;
+        }
+
+        textarea {
+            width: 100%;
+            height: 100px;
+            margin: 5px 5px 5px 5px;
+            font-size: 16px;
+        }
+        .counter {
+            font-weight: bold;
+            margin-top: 10px;
+            display: block;
+        }
+        /* This class will be added dynamically by JS */
+        .limit-reached {
+            color: red;
+        }
+        .title {
+            font-family: 'Arial Black', sans-serif;
+            color:palevioletred;
+        }
+#copybtn{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+#copybtn :hover{
+    transition: ease-out 0.3s;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    border: 1px solid black;
+    height: 30px; 
+    width: 50px;
+    border-radius: 50px ;
+    cursor: pointer;
+}
+    </style>
+</head>
+<body class="light-theme">
+<header class="head" style="display: flex; justify-content: space-between; background-image: url(headbg.jpg); background-size:auto; padding: 5px 5px; border: radius 2px;; height:50px; width:100%;">
+    <h1 id="title" style="font-family: 'Times New Roman', Times, serif; color:maroon">HADaTHOUGHT</h1>
+    <button id="toggle-btn">Switch to Light Mode</button>
+</header>
+
+    <div style="margin-top: 20px; padding: 20px; border-radius: 5px;" id="a1">
+
+        <div id="copy" style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+             <h3>Tweet your thoughts (Max 50 chars)</h3>
+            <button onclick="copyText()" id="copybtn"><i data-lucide="copy" class="icon"></i></button> </div>
+    <textarea id="tweet-box" placeholder="What's happening?"></textarea>
+    
+    <span id="char-count" class="counter">0 / 50</span>
+
+    </div>
+
+   <!-- <script src="counter.js"></script> -->
+    <script src="toggle.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+</body>
+</html>

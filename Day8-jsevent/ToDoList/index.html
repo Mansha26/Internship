@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Need To Do</title>
+    <style>
+        /* CSS Styling */
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background-color: #129e92;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+            margin: 0;
+        }
+
+        .app-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        h1 {
+            text-transform: uppercase;
+            border-bottom: 2px solid #333;
+            display: inline-block;
+            margin-top: 0;
+            padding-bottom: 5px;
+        }
+
+        /* Input Layout */
+        .input-section {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        textarea {
+            flex-grow: 1;
+            height: 100px;
+            padding: 10px;
+            border: 1.5px solid #129e92;
+            border-radius: 4px;
+            resize: none;
+            font-family: inherit;
+        }
+
+        .datetime-inputs {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 130px;
+        }
+
+        input[type="date"], input[type="time"] {
+            padding: 8px;
+            border: 1.5px solid #129e92;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+
+        .add-btn-container {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 30px;
+        }
+
+        /* Lists & Task Items */
+        .list-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            margin: 0;
+            color: #4b5563;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 15px 0;
+        }
+
+        .task-item {
+            border: 1px solid #0a413c;
+            border-radius: 6px;
+            padding: 12px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: linear-gradient(to right,#0a413c, #10b981);
+        }
+
+        .task-content {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .task-text {
+            font-weight: 500;
+        }
+
+        .task-meta {
+            font-size: 0.8rem;
+            color: #6b7280;
+        
+        }
+
+        .task-actions {
+            display: flex;
+            gap: 5px;
+        }
+
+        /* Buttons */
+        button {
+            cursor: pointer;
+            border: 1px solid #d1d5db;
+            background-color: #fff;
+            padding: 6px 10px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            transition: background-color 0.2s;
+        }
+
+        .btn-add:hover { background-color: #29b647; }
+        .btn-clear:hover{
+                background-color: #ca0808; 
+                
+        }
+        .btn-clear{
+            
+             background-color: #0a413c; 
+             color: white; 
+             font-weight: bold;
+             }
+        .btn-add {
+            background-color: #0a413c;
+            padding: 8px 15px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .btn-done { background-color: #10b981;; font-weight: bold; }
+        .btn-delete { background-color: #ef4444; }
+        .btn-edit { background-color: #3b82f6; }
+        .btn-undo { background-color: #f59e0b; }
+        
+        /* Edit Mode Input */
+        .edit-input {
+            width: 100%;
+            padding: 5px;
+            font-family: inherit;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="app-container">
+        <h1>Need To Do</h1>
+
+        <div class="input-section">
+            <textarea id="taskDesc" placeholder="What needs to be done?"></textarea>
+            <div class="datetime-inputs">
+                <input type="date" id="taskDay" title="Day">
+                <input type="time" id="taskTime" title="Time">    
+            <div class="add-btn-container">
+            <button class="btn-add" onclick="addTask()">Add</button>
+        </div>
+    </div>
+        </div>
+        
+
+        <div class="list-header">
+            <h2>on list</h2>
+            <button onclick="clearPending()" class="btn-clear" >Clear</button>
+        </div>
+        <ul id="pendingList"></ul>
+
+        <div class="list-header" style="margin-top: 40px;">
+            <h2>done task</h2>
+        </div>
+        <ul id="doneList"></ul>
+    </div>
+
+    <script src="todo.js"></script>
+
+</body>
+</html>
