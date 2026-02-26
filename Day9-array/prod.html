@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtered Sale Items</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        #searchBar {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            font-size: 16px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box; /* Ensures padding doesn't affect 100% width */
+        }
+        #productList {
+            list-style-type: none;
+            padding: 0;
+        }
+        .product-card {
+            background-color: #f9f9f9;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border-left: 5px solid #4CAF50;
+            display: flex;
+            justify-content: space-between;
+        }
+        .price {
+            font-weight: bold;
+            color: #2e7d32;
+        }
+        .no-results {
+            color: #777;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Sale Items (In Stock Only)</h2>
+    
+    <input type="text" id="searchBar" placeholder="Search for products...">
+
+    <ul id="productList"></ul>
+
+    <script>
+        // 1. The original array of objects
+        const products = [
+            { id: 1, name: "Laptop", price: 1000, inStock: true },
+            { id: 2, name: "Mouse", price: 25, inStock: false },
+            { id: 3, name: "Keyboard", price: 75, inStock: true },
+            { id: 4, name: "Monitor", price: 200, inStock: true },
+            { id: 5, name: "Webcam", price: 50, inStock: false }
+        ];
+
+        // 2. Select DOM Elements
+        const searchBar = document.getElementById('searchBar');
+        const productList = document.getElementById('productList');
+
+        // 3. Function to process data and render HTML
+        function displayProducts(searchTerm = '') {
+            // Clear the list before adding new items
+            productList.innerHTML = '';
+
+            // The Filter & Map Chain
+            const saleItems = products
+                .filter(product => product.inStock === true) // Keep only in-stock items
+                .filter(product => product.name.toLowerCase().includes(searchTerm.toLowerCase())) // Keep items matching search
+                .map(product => { // Transform remaining items to apply 10% discount
+                    return {
+                        item: product.name,
+                        salePrice: product.price * 0.9
+                    };
+                });
+
+            // Handle empty results
+            if (saleItems.length === 0) {
+                productList.innerHTML = '<li class="no-results">No in-stock items match your search.</li>';
+                return;
+            }
+
+            // Loop through the final saleItems array and create HTML elements
+            saleItems.forEach(product => {
+                const li = document.createElement('li');
+                li.className = 'product-card';
+                
+                // Using toFixed(2) to make sure the price always shows two decimal places (e.g., $67.50)
+                li.innerHTML = `
+                    <span>${product.item}</span>
+                    <span class="price">$${product.salePrice.toFixed(2)}</span>
+                `;
+                
+                productList.appendChild(li);
+            });
+        }
+
+        // 4. Listen for typing in the search bar
+        searchBar.addEventListener('input', (e) => {
+            const textTyped = e.target.value;
+            displayProducts(textTyped); 
+        });
+
+        // 5. Initial render so items show up before you start typing
+        displayProducts();
+
+    </script>
+</body>
+</html>

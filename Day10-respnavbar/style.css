@@ -1,0 +1,123 @@
+/* header nav{ 
+    display: flex;
+    flex-direction:row-reverse;
+    align-items: center; 
+    background-color: #6ae6fc;
+    padding: 10px 20px;
+} 
+h2{
+    font-family: sans-serif;
+    font-style: italic;
+    align-items: center;
+    color: rgb(54, 16, 16);
+}
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Pushes links to center/left and cart to right */
+  /* text-align: center;
+} */ 
+
+body{
+    /* From https://css.glass */
+background: rgba(215, 166, 254, 0.66);
+/* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(20px);
+-webkit-backdrop-filter: blur(20px); */
+}
+header {
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #333;
+    color: white;
+}
+nav{
+    /* padding-right: 35px; */
+    padding-bottom: 10px;
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 20px; 
+    animation: slideIn 0.4s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+ header h2 { 
+    margin: 0;
+} 
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px; 
+     transition: background-color 0.8s, width 1.0s; 
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.178);
+    width: 90%;
+    border-radius: 10px;
+}
+
+.sideshow {
+    display: none;
+    cursor: pointer;
+}
+
+.sideshow span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .sideshow {
+        display: block; 
+    }
+
+    /* vertical nav */
+    nav {
+        display: none; /* Hidden by default on mobile */
+        flex-direction: column;
+        position: absolute;
+        top: 70px; 
+        left: 0;
+        width: 100%;
+        background-color: #8d0d68;
+        justify-content: center;
+        text-align: center; 
+    
+    }
+
+    nav.active {
+        /* From https://css.glass */
+background: rgba(114, 15, 93, 0.973);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(10px);
+-webkit-backdrop-filter: blur(5px);
+
+        display: flex;
+    }
+
+    /* Make links take up the full width on mobile */
+    nav a {
+        padding: 15px;
+        border-bottom: 1.5px solid #191818;
+    }
+}

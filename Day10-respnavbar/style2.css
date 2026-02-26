@@ -1,0 +1,66 @@
+
+.flower {
+  background-color: white;
+  width: 250px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden; 
+  transition: transform 0.3s;
+  text-align: left;
+}
+.align{
+    align-items: center;
+}
+.flower:hover {
+  transform: translateY(-5px); /* Moves card up slightly on hover */
+}
+
+.flower img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+.pdg {
+  padding: 15px;
+}
+.card-info {
+  
+  position: relative; /* Needed for positioning the button */
+}
+
+.card-info h3 {
+  margin-bottom: 5px;
+  color: #2c3e50;
+}
+
+.source {
+  color: #f1c40f; /* Yellow star color */
+  
+  font-size: 0.9rem;
+}
+.mgb{
+    margin-bottom: 10px;
+}
+
+.info {
+  font-style: italic;
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 35px;
+}
+
+.read-btn {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  background-color: #d3005b;
+  color: white;
+  border: none;
+  padding: 5px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.bg-c:hover {
+  background-color: #4d0f31;
+}
